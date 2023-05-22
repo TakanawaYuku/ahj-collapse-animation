@@ -1,0 +1,174 @@
+/* Стили для collapse-chat */
+
+.collapse-chat-container {
+    position: absolute;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 220px;
+    
+    right: 36px; bottom: 36px;
+  
+    box-shadow: 0px 0px 8px 2px #bdbdbd;
+    background-color: #f3f3f3;
+  
+    opacity: 0;
+  
+    max-height: 0;
+    width: 0;
+  
+    overflow: hidden;
+  
+    transition: all 0.6s ease;
+  }
+  
+  .visibility {
+    opacity: 1;
+    animation-name: open;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+  
+    width: 220px;
+    max-height: 100%;
+  }
+  
+  @keyframes open {
+   0% {
+    transform: translate(50%, 50%) scale(0);
+   }
+   100% {
+    transform: translate(0%, 0%) scale(1);
+   }
+  }
+  
+  .collapse-chat-close {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+  
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    margin: 10px 10px 0px;
+  
+    line-height: 20px;
+  
+    border-radius: 50%;
+    
+    cursor: pointer;
+  }
+  
+  .collapse-chat-close::after {
+    content: "";
+    position: absolute;
+  
+    height: 100%; top: -1px; left: 50%;
+  
+    border: 1px solid black;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+  
+  .collapse-chat-close::before {
+    content: "";
+    position: absolute;
+    
+    height: 100%; top: -1px; left: 50%;
+  
+    border: 1px solid black;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  
+  .collapse-chat-close:hover {
+    background-color: #cccccc;
+    box-shadow: 0px 0px 15px 2px #949494;
+    transform: rotate(180deg);
+    transition: all 0.3s ease;;
+  }
+  
+  .collapse-chat-title {
+    display: flex;
+    margin: 20px auto 0px;
+  }
+  
+  .collapse-chat-text {
+    resize: none;
+  
+    height: 110px;
+  
+    margin: 12px 15px 0px;
+    padding: 10px;
+  
+    border: 1px solid #a0a0a0;
+    border-radius: 6px;
+  }
+  
+  .collapse-chat-text:focus {
+    outline: none;
+    border-color: #2255a7;
+  }
+  
+  .collapse-chat-send {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    padding: 3px;
+  
+    font-size: 14px;
+    user-select: none;
+  
+    border: 1px solid #a0a0a0;
+    border-radius: 6px;
+  
+    cursor: pointer;
+  }
+  
+  .collapse-chat-send:hover {
+    box-shadow: 0px 0px 8px 1px #949494;
+  }
+  
+  .collapse-chat-send:active {
+    background-color: #adadad;
+  }
+  
+  .collapse-chat-open {
+    position: absolute;
+    display: flex;
+  
+    width: 50px;
+    height: 50px;
+  
+    right: 12px; bottom: 12px;
+  
+    border-radius: 50%;
+    background-color: #ff00003f;
+  
+    cursor: pointer;
+  
+    opacity: 1;
+  
+    transition: all 1s ease;
+  }
+  
+  .invisibility {
+    opacity: 0;
+  }
+  
+  .collapse-chat-open::after {
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+  
+    border: 1px solid black;
+    border-radius: 50%;
+  
+    background-color: #df0000;
+  
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .collapse-chat-open:hover {
+    background-color: #df0000a4;
+  }
